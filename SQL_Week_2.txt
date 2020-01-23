@@ -12,6 +12,17 @@ Qustion 4 Example
 4.1 List the firstname and lastname of employees that employeenumber is between 1100 and 1600.
 >> SELECT FIRSTNAME , LASTNAME FROM EMPLOYEES WHERE EMPLOYEENUMBER BETWEEN 1100 AND 1600;
 
-4.2 List all name of customers when city name start with S.
+4.2 List all name of customers when city name start with "S".
 >> SELECT CUSTOMERNAME FROM CUSTOMERS WHERE CITY LIKE 'S%';
 
+4.3 List all name of customers that start with "C" and end with "."(FullStop)
+>> SELECT CUSTOMERNAME FROM CUSTOMERS WHERE CUSTOMERNAME LIKE 'C%.';
+
+4.4 List all ordernumber from orders that status still in process.
+>> SELECT ORDERNUMBER FROM ORDERS WHERE STATUS = 'In Process';
+
+4.5 List all order number, order shipdate and order priceeach.
+>> SELECT ORDERS.ORDERNUMBER, ORDERS.SHIPPEDDATE, ORDERDETAILS.PRICEEACH FROM ORDERS INNER JOIN ORDERDETAILS ON ORDERS.ORDERNUMBER = ORDERDETAILS.ORDERNUMBER;
+
+4.6 List all order number, order shipdate and order priceeach that priceeach below 100.
+>> SELECT ORDERS.ORDERNUMBER, ORDERS.SHIPPEDDATE, ORDERDETAILS.PRICEEACH FROM ORDERS INNER JOIN ORDERDETAILS ON ORDERS.ORDERNUMBER = ORDERDETAILS.ORDERNUMBER WHERE ORDERDETAILS.PRICEEACH < 100;
