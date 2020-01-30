@@ -1,7 +1,10 @@
 -- LAB 3 QUESTION 1 --
 
 1.1. List all ORDERNUMBER and STATUS of PRODUCTNAME = 'The Titanic'.
->>
+>> SELECT OD.ORDERNUMBER, OD.STATUS 
+   FROM PRODUCTS PD, ORDERDETAILS ODD, ORDERS OD 
+   WHERE PD.PRODUCTCODE = ODD.PRODUCTCODE 
+   AND PD.PRODUCTNAME = 'The Titanic';
 
 1.2.	List all PRODUCTNAME of the product that is in the order with STATUS = 'In Progress'. 
 >> SELECT PD.PRODUCTNAME 
