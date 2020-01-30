@@ -10,11 +10,18 @@
 >> SELECT PD.PRODUCTNAME 
    FROM PRODUCTS PD, ORDERDETAILS ODD, ORDERS OD 
    WHERE PD.PRODUCTCODE = ODD.PRODUCTCODE 
-   AND ODD.ORDERNUMBER = OD.ORDERNUMBER;
+   AND ODD.ORDERNUMBER = OD.ORDERNUMBER
+   AND OD.STATUS = 'In Process';
    
 1.3. List all CUSTOMERNAME (remove duplicate names) who is in France and orders a product 
      in the product line that contains 'ownership' in its text description.
->>
+>> SELECT DISTINCT CU.CUSTOMERNAME 
+   FROM CUSTOMERS CU, ORDERS OD, ORDERDETAILS ODD, PRODUCTS PD, PRODUCTLINES PDL
+   WHERE CU.CUSTOMERNUMBER = OD.CUSTOMERNUMBER 
+   AND OD.ORDERNUMBER = ODD.ORDERNUMBER 
+   AND ODD.PRODUCTCODE = PD.PRODUCTCODE 
+   AND PD.PRODUCTLINE = PDL.PRODUCTLINE 
+   AND PDL.TEXTDESCRIPTION LIKE '%ownership%';
 
 1.4. List CUSTOMERNAME of the customer who orders from an employee who works in the office that is the same country as the customer.
 >>
