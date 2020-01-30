@@ -24,7 +24,11 @@
    AND PDL.TEXTDESCRIPTION LIKE '%ownership%';
 
 1.4. List CUSTOMERNAME of the customer who orders from an employee who works in the office that is the same country as the customer.
->>
+>> SELECT CU.CUSTOMERNAME 
+   FROM CUSTOMERS CU, EMPLOYEES EM, OFFICES OFF
+   WHERE EM.EMPLOYEENUMBER = CU.SALESREPEMPLOYEENUMBER 
+   AND EM.OFFICECODE = OFF.OFFICECODE
+   AND CU.COUNTRY = OFF.COUNTRY;
 
 1.5. List FIRSTNAME and LASTNAME of all employees who reports directly to 'VP Sales' (JOBPOSITION)
 >>
