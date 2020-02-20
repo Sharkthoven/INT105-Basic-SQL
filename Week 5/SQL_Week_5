@@ -1,1 +1,21 @@
+--LAB 5 QUESTION 1: Write SQL statements to answer the following questions.--
+--1.1.	How many employees report to 'Patterson' (EMPLOYEE's LASTNAME).
 
+
+--1.2.	How many countries that 'Jones' (EMPLOYEE's LASTNAME) 's CUSTOMERS located in. 
+
+
+--1.3.	List the ORDERNUMBER and the total cost (summation of all QUANTITYORDER * PRICEEACH) of each ORDER that its STATUS is 'Shipped'.
+
+
+--1.4.	How many pieces that each product is ordered? Show the PRODUCTCODE, PRODUCTNAME, and the numbers that it is ordered.
+
+
+--1.5.	Show the average BUYPRICE of all products in PRODUCTLINES that have more than 3 products. 
+
+
+--1.6.	What is the PRODUCTNAME of the highest BUYPRICE product? (optional)
+
+
+
+--LAB 5 QUESTION 2--
